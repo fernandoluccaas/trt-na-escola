@@ -127,6 +127,12 @@
       explain: 'Preconceito é uma ideia ou atitude; discriminação é uma prática de tratamento desigual; racismo é também um sistema que produz e mantém desigualdades.'
     },
     {
+      q: 'Discriminar alguém por orientação sexual ou identidade de gênero pode ser crime no Brasil?',
+      options: ['Não, é só uma opinião', 'Sim, o STF reconheceu a LGBTIfobia como crime de racismo'],
+      answer: 1,
+      explain: 'Na decisão do STF (MI 4733 e ADO 26), a LGBTIfobia foi reconhecida como crime de racismo, aplicando-se a Lei nº 7.716/1989.'
+    },
+    {
       q: 'O assédio moral só acontece de um chefe para um subordinado?',
       options: ['Sim', 'Não'],
       answer: 1,

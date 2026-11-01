@@ -1078,6 +1078,7 @@ p { margin: 0 0 1.1em; }
 .credits dt { font-weight: 600; color: var(--ink); }
 .credits dd { margin: 0; color: var(--ink-soft); }
 .credits .pending { color: var(--muted); font-style: italic; }
+.credits .team { margin: 0; padding: 0; list-style: none; }
 
 /* Como usar */
 .howto { display: grid; gap: 16px; margin: 24px 0; padding: 0; list-style: none; }
