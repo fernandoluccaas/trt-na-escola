@@ -134,6 +134,12 @@ p { margin: 0 0 1.1em; }
     var(--red-700) 80px 96px);
 }
 
+.kente--pride {
+  background: linear-gradient(90deg,
+    #e40303 0 16.66%, #ff8c00 16.66% 33.33%, #ffed00 33.33% 50%,
+    #008026 50% 66.66%, #24408e 66.66% 83.33%, #732982 83.33% 100%);
+}
+
 /* ---------- Header ---------- */
 .site-header {
   position: sticky;
@@ -234,7 +240,7 @@ p { margin: 0 0 1.1em; }
 .nav-toggle[aria-expanded="true"] .icon-open { display: none; }
 .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
 
-@media (max-width: 1139px) {
+@media (max-width: 1239px) {
   .nav-toggle { display: inline-flex; }
   .site-nav {
     position: absolute;
@@ -748,6 +754,7 @@ p { margin: 0 0 1.1em; }
 }
 @media (max-width: 1023px) {
   .toc ol {
+    position: relative; /* referência para o offsetLeft usado no main.js */
     display: flex;
     gap: 8px;
     overflow-x: auto;
@@ -803,7 +810,10 @@ p { margin: 0 0 1.1em; }
 
 /* Cartões de definição (cor, raça, etnia) */
 .def-grid { display: grid; gap: 16px; margin: 28px 0; }
-@media (min-width: 720px) { .def-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 720px) {
+  .def-grid { grid-template-columns: repeat(3, 1fr); }
+  .def-grid--2 { grid-template-columns: repeat(2, 1fr); }
+}
 .def-card {
   padding: 22px;
   border-radius: var(--radius-sm);

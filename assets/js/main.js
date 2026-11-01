@@ -55,9 +55,11 @@
         const link = byId.get(entry.target.id);
         if (!link) return;
         link.classList.add('is-active');
-        // No celular o sumário é uma faixa horizontal: mantém o item ativo à vista
-        if (window.innerWidth < 1024) {
-          link.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'auto' });
+        // No celular o sumário é uma faixa horizontal: rola só a faixa (scrollIntoView
+        // também rolaria a página inteira de volta para o sumário)
+        const strip = link.closest('ol');
+        if (window.innerWidth < 1024 && strip) {
+          strip.scrollLeft = link.offsetLeft - (strip.clientWidth - link.offsetWidth) / 2;
         }
       });
     }, { rootMargin: '-25% 0px -65% 0px' });
