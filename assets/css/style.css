@@ -316,6 +316,21 @@ p { margin: 0 0 1.1em; }
   mask-image: linear-gradient(100deg, transparent 25%, #000 85%);
 }
 
+/* Banner da página inicial: fotos dos temas sob uma camada vinho */
+.hero--banner {
+  background:
+    linear-gradient(90deg, rgba(42, 15, 18, .95) 0%, rgba(42, 15, 18, .86) 48%, rgba(61, 22, 26, .6) 100%),
+    url("../img/banner-temas.jpg") center / cover no-repeat;
+}
+.hero--banner::before { display: none; }
+@media (max-width: 959px) {
+  .hero--banner {
+    background:
+      linear-gradient(rgba(42, 15, 18, .9), rgba(42, 15, 18, .9)),
+      url("../img/banner-temas.jpg") center / cover no-repeat;
+  }
+}
+
 .hero-inner {
   display: grid;
   gap: 40px;
@@ -711,7 +726,8 @@ p { margin: 0 0 1.1em; }
 .help-card .help-action .icon { width: 1em; height: 1em; }
 .help-card--urgent { background: var(--red-700); border-color: var(--red-700); color: #fff; }
 .help-card--urgent h3, .help-card--urgent .help-action { color: #fff; }
-.help-card--urgent p { color: rgba(255, 255, 255, .85); }
+.help-card--urgent p, .prose .help-card--urgent p { color: rgba(255, 255, 255, .85); }
+.prose .help-card h3 { margin-top: 0; }
 .help-card--urgent .help-icon { background: rgba(255, 255, 255, .15); color: #fff; }
 
 /* ---------- Layout de conteúdo com sumário lateral ---------- */
@@ -1079,6 +1095,7 @@ p { margin: 0 0 1.1em; }
 .credits dd { margin: 0; color: var(--ink-soft); }
 .credits .pending { color: var(--muted); font-style: italic; }
 .credits .team { margin: 0; padding: 0; list-style: none; }
+.credits .course { color: var(--muted); font-size: .9375rem; }
 
 /* Como usar */
 .howto { display: grid; gap: 16px; margin: 24px 0; padding: 0; list-style: none; }
@@ -1247,6 +1264,54 @@ p { margin: 0 0 1.1em; }
 }
 
 /* ---------- Impressão ---------- */
+/* ---------- Galeria de fotos ---------- */
+.gallery {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  margin: 24px 0 0;
+}
+.gallery figure {
+  margin: 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.gallery img { width: 100%; height: 240px; object-fit: cover; }
+.gallery img.pos-bottom { object-position: center 85%; }
+.gallery img.pos-top { object-position: center 20%; }
+.gallery figcaption { padding: 12px 16px 14px; font-size: .9375rem; line-height: 1.5; color: var(--muted); }
+.section-more { margin: 32px 0 0; text-align: center; }
+
+/* ---------- Parceiros ---------- */
+.partner-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  margin: 24px 0 0;
+}
+.partner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 20px;
+  background: #f1f1f1;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+/* As logos vêm com fundo cinza #f1f1f1 (a do TRT na Escola, branco, igualado pelo multiply) */
+.partner img { width: 100%; max-width: 200px; height: 240px; object-fit: contain; }
+.partner img.on-white { mix-blend-mode: multiply; }
+.partner figcaption { font-size: .9375rem; font-weight: 600; color: var(--wine-900); }
+
+.photo-credits { font-size: .8125rem; }
+.photo-credits a { color: inherit; }
+
 @media print {
   .site-header, .site-footer, .to-top, .toc, .page-nav, .hero-actions, .kente { display: none !important; }
   .hero, .page-hero { background: none; color: #000; }
