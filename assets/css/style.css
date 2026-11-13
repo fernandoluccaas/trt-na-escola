@@ -195,10 +195,11 @@ p { margin: 0 0 1.1em; }
 .site-nav a {
   position: relative;
   display: block;
-  padding: 10px 12px;
+  padding: 10px 10px;
   font-size: .8125rem;
   font-weight: 600;
-  letter-spacing: .06em;
+  letter-spacing: .04em;
+  white-space: nowrap;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--ink-soft);
@@ -210,7 +211,7 @@ p { margin: 0 0 1.1em; }
 .site-nav a[aria-current="page"]::after {
   content: "";
   position: absolute;
-  left: 12px; right: 12px; bottom: 4px;
+  left: 10px; right: 10px; bottom: 4px;
   height: 2px;
   border-radius: 2px;
   background: var(--red-700);
@@ -240,7 +241,7 @@ p { margin: 0 0 1.1em; }
 .nav-toggle[aria-expanded="true"] .icon-open { display: none; }
 .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
 
-@media (max-width: 1239px) {
+@media (max-width: 1399px) {
   .nav-toggle { display: inline-flex; }
   .site-nav {
     position: absolute;
@@ -439,6 +440,42 @@ p { margin: 0 0 1.1em; }
 .credits-seal strong { display: block; font-family: var(--font-display); font-size: 1.375rem; color: var(--wine-900); }
 
 .footer-seal { width: 64px; height: 64px; padding: 3px; flex: none; }
+
+/* Banners das páginas de tema: foto do assunto sob a camada vinho */
+.page-hero--photo::before { display: none; }
+.page-hero--racismo {
+  background:
+    linear-gradient(90deg, rgba(42, 15, 18, .95) 0%, rgba(42, 15, 18, .85) 50%, rgba(61, 22, 26, .55) 100%),
+    url("../img/banners/racismo.jpg") center / cover no-repeat;
+}
+.page-hero--lgbtifobia {
+  background:
+    linear-gradient(90deg, rgba(42, 15, 18, .95) 0%, rgba(42, 15, 18, .85) 50%, rgba(61, 22, 26, .55) 100%),
+    url("../img/banners/lgbtifobia.jpg") center / cover no-repeat;
+}
+.page-hero--assedio {
+  background:
+    linear-gradient(90deg, rgba(42, 15, 18, .95) 0%, rgba(42, 15, 18, .85) 50%, rgba(61, 22, 26, .55) 100%),
+    url("../img/banners/assedio.jpg") center / cover no-repeat;
+}
+.page-hero--trabalho {
+  background:
+    linear-gradient(90deg, rgba(42, 15, 18, .95) 0%, rgba(42, 15, 18, .85) 50%, rgba(61, 22, 26, .55) 100%),
+    url("../img/banners/trabalho.jpg") center / cover no-repeat;
+}
+.page-hero--direitos {
+  background:
+    linear-gradient(90deg, rgba(42, 15, 18, .95) 0%, rgba(42, 15, 18, .85) 50%, rgba(61, 22, 26, .55) 100%),
+    url("../img/banners/direitos.jpg") center / cover no-repeat;
+}
+@media (max-width: 959px) {
+  .page-hero--photo { background-blend-mode: normal; }
+  .page-hero--racismo { background: linear-gradient(rgba(42, 15, 18, .88), rgba(42, 15, 18, .88)), url("../img/banners/racismo.jpg") center / cover no-repeat; }
+  .page-hero--lgbtifobia { background: linear-gradient(rgba(42, 15, 18, .88), rgba(42, 15, 18, .88)), url("../img/banners/lgbtifobia.jpg") center / cover no-repeat; }
+  .page-hero--assedio { background: linear-gradient(rgba(42, 15, 18, .88), rgba(42, 15, 18, .88)), url("../img/banners/assedio.jpg") center / cover no-repeat; }
+  .page-hero--trabalho { background: linear-gradient(rgba(42, 15, 18, .88), rgba(42, 15, 18, .88)), url("../img/banners/trabalho.jpg") center / cover no-repeat; }
+  .page-hero--direitos { background: linear-gradient(rgba(42, 15, 18, .88), rgba(42, 15, 18, .88)), url("../img/banners/direitos.jpg") center / cover no-repeat; }
+}
 
 /* Hero das páginas internas */
 .page-hero .container { padding-block: clamp(48px, 8vw, 88px); }
