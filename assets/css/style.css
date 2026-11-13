@@ -1312,6 +1312,37 @@ p { margin: 0 0 1.1em; }
 .photo-credits { font-size: .8125rem; }
 .photo-credits a { color: inherit; }
 
+/* ---------- Poesia ---------- */
+.poem {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding-block: clamp(48px, 7vw, 88px);
+  font-size: 1.1875rem;
+  line-height: 1.75;
+}
+.poem p { margin: 0 0 1.25em; }
+.poem .poem-cry {
+  margin: 1.75em 0;
+  padding-left: 20px;
+  border-left: 4px solid var(--red-700);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.6vw, 1.625rem);
+  line-height: 1.3;
+  color: var(--wine-900);
+}
+.poem-author {
+  margin-top: 2.5em !important;
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--wine-900);
+}
+.poem-author span { display: block; font-family: var(--font-body); font-size: .9375rem; font-weight: 400; color: var(--muted); }
+.poem-teaser { max-width: 46rem; }
+.poem-teaser h2 { color: #fff; }
+.poem-teaser p { color: rgba(255, 255, 255, .82); margin-bottom: 24px; }
+
 @media print {
   .site-header, .site-footer, .to-top, .toc, .page-nav, .hero-actions, .kente { display: none !important; }
   .hero, .page-hero { background: none; color: #000; }
